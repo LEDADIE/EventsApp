@@ -31,6 +31,11 @@ namespace EventsApp.Data
                 .HasMany(ev => ev.Participants)
                 .WithOne(p => p.Evenement)
                 .OnDelete(DeleteBehavior.Cascade); // Autoriser la suppression en cascade
+
+            // many-to-many
+            modelBuilder.Entity<Evenement>()
+                .HasMany(c => c.Categories)
+                .WithMany(ev => ev.Evenements);
         }
 
         public DbSet<Evenement> Evenements { get; set; }
