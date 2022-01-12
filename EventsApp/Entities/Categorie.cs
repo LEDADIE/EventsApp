@@ -10,7 +10,7 @@ namespace EventsApp.Entities
         public int CategorieId { get; set; }
         public string Nom { get; set; }
 
-        // many-to-many
-        public ICollection<Evenement> Evenements { get; set; }
+        //// many-to-many
+        //public ICollection<Evenement> Evenements { get; set; }
     }
 }

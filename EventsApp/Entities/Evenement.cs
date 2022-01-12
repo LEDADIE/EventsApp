@@ -25,10 +25,10 @@ namespace EventsApp.Entities
         // relation One-to-One
         public Organisateur Organisateur { get; set; }
 
-        // relation one-o-many
-        public ICollection<Participant> Participants { get; set; }
+        //// relation one-o-many
+        //public ICollection<Participant> Participants { get; set; }
 
-        //relation many-to-many
-        public ICollection<Categorie> Categories { get; set; }
+        ////relation many-to-many
+        //public ICollection<Categorie> Categories { get; set; }
     }
 }

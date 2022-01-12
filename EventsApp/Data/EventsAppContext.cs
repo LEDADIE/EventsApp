@@ -11,6 +11,10 @@ namespace EventsApp.Data
 {
     public class EventsAppContext : DbContext
     {
+        public EventsAppContext(DbContextOptions options):base(options)
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.LogTo(Console.WriteLine);
@@ -26,16 +30,16 @@ namespace EventsApp.Data
                 .WithOne(o => o.Evenement)
                 .HasForeignKey<Organisateur>(o => o.EvenementRef);
 
-            // one-to-many
-            modelBuilder.Entity<Evenement>()
-                .HasMany(ev => ev.Participants)
-                .WithOne(p => p.Evenement)
-                .OnDelete(DeleteBehavior.Cascade); // Autoriser la suppression en cascade
+            //// one-to-many
+            //modelBuilder.Entity<Evenement>()
+            //    .HasMany(ev => ev.Participants)
+            //    .WithOne(p => p.Evenement)
+            //    .OnDelete(DeleteBehavior.Cascade); // Autoriser la suppression en cascade
 
-            // many-to-many
-            modelBuilder.Entity<Evenement>()
-                .HasMany(c => c.Categories)
-                .WithMany(ev => ev.Evenements);
+            //// many-to-many
+            //modelBuilder.Entity<Evenement>()
+            //    .HasMany(c => c.Categories)
+            //    .WithMany(ev => ev.Evenements);
         }
 
         public DbSet<Evenement> Evenements { get; set; }
