@@ -9,5 +9,8 @@ namespace EventsApp.Entities
     {
         public int ParticipantId { get; set; }
         public string NomComplet { get; set; }
+
+        // one-to-many
+        public Evenement Evenement { get; set; }
     }
 }

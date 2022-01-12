@@ -9,5 +9,9 @@ namespace EventsApp.Entities
     {
         public int OrganisateurId { get; set; }
         public string Nom { get; set; }
+
+        // One-to-One
+        public int EvenementRef { get; set; }
+        public Evenement Evenement { get; set; }
     }
 }

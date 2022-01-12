@@ -21,5 +21,14 @@ namespace EventsApp.Entities
 
         [Comment("Date de l'heure de l'evenement")]
         public string DateHeure { get; set; }
+
+        // relation One-to-One
+        public Organisateur Organisateur { get; set; }
+
+        // relation one-o-many
+        public ICollection<Participant> Participants { get; set; }
+
+        //relation many-to-many
+        public ICollection<Categorie> Categories { get; set; }
     }
 }
